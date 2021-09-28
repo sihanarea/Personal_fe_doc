@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冒泡排序</title>
+</head>
+<body>
+  
+</body>
+<script>
+//传统方式
+function bubble(arr){
+  var len = arr.length;
+  var i,j,temp;
+  for(i=0;i<len;i++){
+    for(j=0;j<len-1;j++){
+      if(arr[j] > arr[j+1]){
+        temp = arr[j+1]; //占存小的数    
+        arr[j+1] = arr[j]; // 把大数赋值给小数，这时候小数就变成了大数
+        arr[j] = temp; //把小数赋值给大数
+      }
+    }
+  }
+  return arr;
+}
+
+//改进后
+function bubble2(arr){
+ 
+}
+
+</script>
+</html>
