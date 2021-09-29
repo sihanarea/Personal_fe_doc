@@ -29,7 +29,44 @@ function bubble(arr){
 
 //改进后
 function bubble2(arr){
- 
+  var temp = null,flag = 1,
+  len = arr.length;
+  for(var i=0;i<len && flag === 1;i++){
+    flag = 0;
+    for(var j=0;j<len-1;j++){
+      if(arr[j] > arr[j+1]){
+        temp = arr[j+1];
+        arr[j+1] = arr[j];
+        arr[j] = temp;
+        flag = 1;
+      }
+    }
+  }
+  return arr;
+}
+
+//再次改进后
+function bubble3(arr){
+  var [left,right,j,temp] = [0,arr.length-1,0,0];
+  while(left < right){
+    for( j=left;j<right;j++){
+      if(arr[j] > arr[j+1]){
+        temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+    right--;
+    for(j=right;j>left;j--){
+      if(arr[j] < arr[j-1]){
+        temp = arr[j];
+        arr[j] = arr[j-1];
+        arr[j-1] = temp;
+      }
+    }
+    left++;
+  }
+  return arr;
 }
 
 </script>
